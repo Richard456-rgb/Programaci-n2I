@@ -33,7 +33,26 @@ while True:
 
 #Simular un cajero automático (menú: retirar, depositar, salir).
 
+opcion = ""
 
+while opcion != "3":
+    
+    print(" Bienvenido a Nuestro cajero ")
+    print(" Ingrese 1 para retirar dinero")
+    print(" Ingrese 2 para depositar dinero")
+    print(" Ingrese 3 para salir")
+    opcion = input("Elige una opción: ")
+
+    if opcion == "1":
+        monto = float(input("¿Cuánto deseas retirar? "))
+        print("Has retirado $",monto )
+    elif opcion == "2":
+        monto = float(input("¿Cuánto deseas depositar? "))
+        print("Has depositado $",monto)
+    elif opcion == "3":
+        print("Gracias por usar el cajero. ¡Hasta luego!")
+    else:
+        print("Opción no válida. Intenta de nuevo.")
 
 
 
