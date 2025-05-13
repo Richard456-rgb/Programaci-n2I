@@ -58,17 +58,64 @@ while opcion != "3":
 
 #Calcular la raíz cuadrada por aproximación (método babilónico).
 
+numero = int(input("Ingresa un número: "))
+x = numero
+y = 1
+contador = 0
+
+while contador < 10:
+    x = (x + numero // x) // 2
+    contador = contador + 1
+
+print("Raíz cuadrada aproximada:", x)
+
 #Contar dígitos de un número entero (ej: 456 → 3).
+
+numero = int(input("Ingresa un número entero: "))
+numero = abs(numero)
+contador = 0
+
+while numero > 0:
+    numero = numero // 10
+    contador = contador + 1
+
+print("Cantidad de dígitos:", contador)
 
 #Generar la secuencia de Fibonacci hasta un límite.
 
+limite = int(input("Ingresa el límite: "))
+a, b = 0, 1
+while a <= limite:
+    print(a, end=" ")
+    a, b = b, a + b
+print()
+
 #Encontrar números primos en un rango dado.
+
+inicio = int(input("Inicio del rango: "))
+fin = int(input("Fin del rango: "))
+for num in range(inicio, fin + 1):
+    if num > 1:
+        for i in range(2, int(num**0.5)+1):
+            if num % i == 0:
+                break
+        else:
+            print(num, end=" ")
+print()
 
 #Simular un temporizador (contar regresivamente desde N).
 
+import time
+n = int(input("Cuenta regresiva desde: "))
+for i in range(n, -1, -1):
+    print(i)
+    time.sleep(1)
+
 #Leer archivos línea por línea hasta fin de archivo.
+print("Ingresa líneas de texto. Escribe 'FIN' para terminar.")
+linea = ""
 
-
-
-# Mientras - While
-# Visualizar los 5 primeros numeros con mientras = while 
+while linea != "FIN":
+    linea = input()
+    if linea != "FIN":
+        print("Leído:", linea)
